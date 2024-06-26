@@ -13,7 +13,7 @@ FIRECRAWL_API_KEY = os.getenv('FIRECRAWL_API_KEY')
 
 load_dotenv()
 
-model = ChatOpenAI(model="gpt-3.5-turbo")#, api_key=OPENAI_API_KEY)
+model = ChatOpenAI(model="gpt-4o")#ChatOpenAI(model="gpt-3.5-turbo")#, api_key=OPENAI_API_KEY)
 
 chat_histoy = []
 
@@ -29,6 +29,7 @@ while True:
 
     # AI response
     result = model.invoke(chat_histoy)
+    print("Result with token: ",result)
     response = result.content
 
     chat_histoy.append(AIMessage(content=response)) # add AI message to chat history
