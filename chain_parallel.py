@@ -65,4 +65,4 @@ with get_openai_callback() as cb:
     response = chain.invoke({"company_name": "MalishaEdu"})
     print(response)
 
-print(f"Total Tokens: {cb.total_tokens}")
+print(f"Total Token: {cb.total_tokens}")
