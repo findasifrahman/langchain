@@ -13,3 +13,5 @@ chain prompts using Runnable Parallel
 Compare between text splitting
 
 Different embedding test
+
+RAG chat
