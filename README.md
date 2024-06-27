@@ -11,3 +11,5 @@ chain promp using RunnableLambda
 chain prompts using Runnable Parallel
 
 Compare between text splitting
+
+Different embedding test

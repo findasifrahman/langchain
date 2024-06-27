@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 #from openai import OpenAI
 from langchain_openai import ChatOpenAI,OpenAIEmbeddings
 
-from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter,RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader,PyPDFLoader
 from langchain_community.vectorstores import VectorStore
 from langchain_community.vectorstores import Chroma
@@ -39,7 +39,7 @@ if not os.path.exists(persistent_dir):
                 doc.metadata = {"source": file}
                 document.append(doc)
 
-    text_splitter = CharacterTextSplitter(chunk_size=500,chunk_overlap=100)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=100)#CharacterTextSplitter(chunk_size=1000,chunk_overlap=100)
     docs = text_splitter.split_documents(document)
 
     print("\nNumber of chunks created:", len(docs))
